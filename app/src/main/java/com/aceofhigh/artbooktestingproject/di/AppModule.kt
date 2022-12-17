@@ -2,9 +2,15 @@ package com.aceofhigh.artbooktestingproject.di
 
 import android.content.Context
 import androidx.room.Room
+import com.aceofhigh.artbooktestingproject.R
 import com.aceofhigh.artbooktestingproject.api.RetrofitAPI
+import com.aceofhigh.artbooktestingproject.repo.ArtRepository
+import com.aceofhigh.artbooktestingproject.repo.ArtRepositoryInterface
+import com.aceofhigh.artbooktestingproject.roomdb.ArtDao
 import com.aceofhigh.artbooktestingproject.roomdb.ArtDatabase
 import com.aceofhigh.artbooktestingproject.util.Util.BASE_URL
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -39,5 +45,18 @@ object AppModule {
             .build()
             .create(RetrofitAPI::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun provideGlide(@ApplicationContext context: Context) =
+        Glide.with(context).setDefaultRequestOptions(
+            RequestOptions().placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_foreground)
+        )
+
+    @Singleton
+    @Provides
+    fun provideNormalRepo(dao: ArtDao, api: RetrofitAPI) =
+        ArtRepository(dao, api) as ArtRepositoryInterface
 
 }

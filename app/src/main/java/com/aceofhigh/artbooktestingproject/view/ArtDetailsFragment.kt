@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.aceofhigh.artbooktestingproject.R
 import com.aceofhigh.artbooktestingproject.databinding.FragmentArtDetailsBinding
+import com.bumptech.glide.RequestManager
+import javax.inject.Inject
 
-class ArtDetailsFragment : Fragment(R.layout.fragment_art_details) {
+class ArtDetailsFragment @Inject constructor(
+    val glide: RequestManager
+) : Fragment(R.layout.fragment_art_details) {
     private lateinit var fragmentBinding: FragmentArtDetailsBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
