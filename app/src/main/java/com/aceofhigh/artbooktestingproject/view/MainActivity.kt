@@ -1,6 +1,7 @@
 package com.aceofhigh.artbooktestingproject.view
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.aceofhigh.artbooktestingproject.R
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,5 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportFragmentManager.fragmentFactory = fragmentFactory
         setContentView(R.layout.activity_main)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
     }
 }
