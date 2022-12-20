@@ -15,8 +15,10 @@ android {
         versionCode 1
         versionName "1.0"
 
+        //to activate hilt custom runner
         testInstrumentationRunner "com.aceofhigh.artbooktestingproject.HiltTestRunner"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
