@@ -16,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "com.aceofhigh.artbooktestingproject.HiltTestRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
