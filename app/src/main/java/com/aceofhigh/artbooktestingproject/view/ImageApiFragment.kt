@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ImageApiFragment @Inject constructor(
-    private val imageRecyclerViewAdapter: ImageRecyclerViewAdapter
+    val imageRecyclerViewAdapter: ImageRecyclerViewAdapter
 ) : Fragment(R.layout.fragment_image_api) {
     lateinit var viewModel: ArtViewModel
 
